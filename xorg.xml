@@ -1,0 +1,19 @@
+## /etc/X11/xorg.conf.d/00-keyboard.conf
+Section "InputClass"
+Identifier "system-keyboard"
+MatchIsKeyboard "on"
+Option "XkbLayout" "gb"
+EndSection
+## /etc/X11/xorg.conf.d/20-amdgpu.conf
+Section "Device"
+  Identifier "AMD Vega"
+  Driver "amdgpu"
+  VendorName "AMD Corporation"
+  #Option "VariableRefresh" "true"
+EndSection
+
+Section "Screen"
+  Identifier "iGPU"
+  Device "AMD Vega"
+  #DefaultDepth 30
+EndSection

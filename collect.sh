@@ -1,21 +1,13 @@
 set -euxo pipefail
 
-printf "VFIO Settings" > data
+sh scripts/iommu.sh > iommu
 
-printf "\n\n### IOMMU\n" >> data
-sh scripts/iommu.sh >> data
+cat /boot/refind_linux.conf > refind_linux.conf
 
-printf "\n\n### libvirt\n" >> data
-cat /etc/libvirt/qemu/win10.xml >> data
+awk '(FNR==1){print "## " FILENAME}1' /etc/X11/xorg.conf.d/*.conf > xorg.xml
 
-printf "\n\n### Xorg\n" >> data
-cat /etc/X11/xorg.conf.d/10-amdgpu.conf >> data
+cat /etc/qemu/bridge.conf > qemu_bridge.conf
 
-printf "\n\n### reFIND\n" >> data
-cat /boot/refind_linux.conf >> data
+cat /etc/libvirt/qemu.conf > libvirt_qemu.conf
 
-printf "\n\n### QEMU\n" >> data
-cat /etc/libvirt/qemu.conf >> data
-
-printf "\n\n### QEMU Bridge\n" >> data
-cat /etc/qemu/bridge.conf >> data
+sudo virsh dumpxml win10 > libvirt_vm.xml
