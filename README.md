@@ -7,5 +7,5 @@ Hardware:
 - ASUS B550M-PLUS Wi-Fi
 - GTX 970
 
-See `data` for dump of data collected by `sudo sh collect.sh`.
+Collect data: `sh collect.sh`.
 
