@@ -1,5 +1,8 @@
 set -euxo pipefail
 
+cat /etc/mkinitcpio.conf > mkinitcpio.conf
+cat /etc/modprobe.d/vfio.conf > modprobe_vfio.conf
+
 sh scripts/iommu.sh > iommu
 
 cat /boot/refind_linux.conf > refind_linux.conf

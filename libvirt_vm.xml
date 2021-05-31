@@ -209,7 +209,7 @@
     <qemu:arg value='-object'/>
     <qemu:arg value='input-linux,id=event17,evdev=/dev/input/by-id/usb-1bcf_USB_Optical_Mouse-event-mouse'/>
     <qemu:arg value='-object'/>
-    <qemu:arg value='input-linux,id=event8,evdev=/dev/input/by-id/usb-OBINS_OBINS_AnnePro2_SN0000000001-event-kbd,grab_all=on,repeat=on'/>
+    <qemu:arg value='input-linux,id=event8,evdev=/dev/input/by-id/usb-Keychron_Keychron_C1-event-kbd,grab_all=on,repeat=on'/>
     <qemu:arg value='-net'/>
     <qemu:arg value='user,smb=/home/droogmic/.local/share/Steam/steamapps/'/>
     <qemu:arg value='--trace'/>
